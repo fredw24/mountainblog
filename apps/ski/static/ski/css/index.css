@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.registarcontain {
+    display: inline-block;
+    margin: auto;
+    padding: 20px;
+}
+
+.container-fluid {
+    margin: auto;
+}
+.container {
+    margin: auto;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.logincontain {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+body{
+    background: url('../images/desktopa.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.form-group {
+    text-align: right;
+}
+
+.btn-primary {
+    text-align: right;
+}

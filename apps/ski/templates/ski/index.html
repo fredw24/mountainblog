@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mountain Login and Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ski/css/index.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Welcome<br>Sign in to view the list of Mountains!</h1>
+        <div class="container">
+            <div class="registarcontain">
+                <h2>Registration</h2>
+                <form action="/createUser" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">First Name:</label>
+                        <input type="text" name="fname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Last Name:</label>
+                        <input type="text" name="lname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password:</label>
+                        <input type="password" name="pcode">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Confirm Password:</label>
+                        <input type="password" name="pcodeCon">
+                        <p></p>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Create</button>
+                </form>
+            </div>
+
+            <div class="logincontain">
+
+                <h2>Login</h2>
+                <form action="/loginresult" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password:</label>
+                        <input type="password" name="pcode">
+                    </div>
+                    <p></p>
+                    <button type="submit" class="btn btn-dark">Login</button>
+                </form>
+            </div>
+
+            {% for message in messages %}
+            <!-- loop through the messages -->
+            <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

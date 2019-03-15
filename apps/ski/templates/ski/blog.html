@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mountain Blog</title>
+    {% load static %}	
+    <link rel="stylesheet" href="{% static 'ski/css/blog.css' %}"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+</head>
+<body>
+    <h1>Submit Your Review</h1>
+
+    {% for message in messages %}            <!-- loop through the messages -->
+        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+
+    <form action = '/blogprocess' method ='post'>
+        {% csrf_token %}
+        <textarea name = "blogprocess"></textarea>
+        <input type = "hidden" name = "montID" value = "{{mountID}}">
+        <input type = "hidden" name = "userID" value = "{{id}}">
+        <button>Submit</button>
+    </form>
+
+    <form action = '/back' method = 'POST'>
+        {% csrf_token %}
+        <button>Back to the Mountain</button>
+
+    </form>
+    
+</body>
+</html>
