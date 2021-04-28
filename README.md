@@ -11,3 +11,8 @@ This is a Python Project that allows users to add mountains to give other users 
   * CSS
   * BootStrap
   * AWS
+
+## How to Access Website
+ * Set the Django Environment to 2.0
+ * Find the file in the terminal directary that has the manage.py
+ * use the command line called python manage.py runserver
